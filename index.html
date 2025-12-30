@@ -357,6 +357,32 @@
       outline-offset: 3px;
       border-radius: 12px;
     }
+    /* Make links readable on dark/glass cards */
+    .side a,
+    .item a{
+      color: rgba(234,240,255,.92);          /* bright readable */
+      text-decoration: none;
+      border-bottom: 1px solid rgba(93,188,255,.45); /* subtle underline */
+      padding-bottom: 1px;
+    }
+    
+    .side a:visited,
+    .item a:visited{
+      color: rgba(234,240,255,.88);          /* prevent purple visited links */
+    }
+    
+    .side a:hover,
+    .item a:hover{
+      color: rgba(255,255,255,1);
+      border-bottom-color: rgba(93,188,255,.85);
+    }
+    
+    .side a:focus,
+    .item a:focus{
+      outline: 3px solid rgba(93,188,255,.45);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 
