@@ -1,26 +1,479 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shayan Yawar Bhatti</title>
-    <meta name="description" content="Shayan Yawar Bhatti (also searched as Shayan Bhatti) — Data Analyst @ IntelliLight AI. Links to LinkedIn, GitHub, and Tableau." />
-  </head>
-  <body>
-    <h1>Shayan Yawar Bhatti</h1>
-    <p><strong>Also searched as:</strong> Shayan Bhatti</p>
-    <p><strong>Data Analyst @ IntelliLight AI</strong></p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shayan Yawar Bhatti</title>
+  <meta name="description" content="Shayan Yawar Bhatti (also searched as Shayan Bhatti) — Data Analyst @ IntelliLight AI. Links to LinkedIn, GitHub, and Tableau Public." />
+  <meta name="robots" content="index,follow" />
 
-    <p>
-      <a href="https://www.linkedin.com/in/shayan-yawar-bhatti/">LinkedIn</a> •
-      <a href="https://github.com/ShayanYawarBhatti">GitHub</a> •
-      <a href="https://public.tableau.com/app/profile/shayan.bhatti">Tableau Public</a>
-    </p>
+  <style>
+    :root{
+      /* Dark base + light contrast palette */
+      --bg0:#070A12;
+      --bg1:#0B1020;
+      --ink:#EAF0FF;
+      --muted:rgba(234,240,255,.74);
+      --muted2:rgba(234,240,255,.60);
 
-    <h2>Featured</h2>
-    <ul>
-      <li><a href="https://github.com/ShayanYawarBhatti/sql-datalemur-archive">SQL — DataLemur Archive</a></li>
-      <li><a href="https://github.com/ShayanYawarBhatti/sql-datalemur-patterns">SQL — DataLemur Patterns</a></li>
-    </ul>
-  </body>
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --stroke:rgba(255,255,255,.12);
+      --stroke2:rgba(255,255,255,.18);
+
+      --glow1:rgba(93,188,255,.32);
+      --glow2:rgba(189,116,255,.28);
+      --glow3:rgba(79,233,194,.18);
+
+      --btn:#EAF0FF;
+      --btnInk:#0A0F1D;
+
+      --radius:22px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 900px at 12% 10%, var(--glow1), transparent 55%),
+        radial-gradient(900px 700px at 86% 18%, var(--glow2), transparent 55%),
+        radial-gradient(900px 700px at 58% 88%, var(--glow3), transparent 55%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 100%);
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    /* subtle texture */
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 1.6px);
+      background-size: 18px 18px;
+      opacity:.18;
+      mix-blend-mode: overlay;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 18px 72px;
+      position:relative;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom: 22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .mark{
+      width:44px;
+      height:44px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+      border:1px solid var(--stroke);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: conic-gradient(from 210deg, rgba(93,188,255,.65), rgba(189,116,255,.55), rgba(79,233,194,.35), rgba(93,188,255,.65));
+      filter: blur(22px);
+      opacity:.65;
+    }
+
+    .brand h1{
+      font-size: 18px;
+      margin:0;
+      letter-spacing: .2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand p{
+      margin:2px 0 0;
+      color:var(--muted2);
+      font-size: 13px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .pillrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      font-size: 12.5px;
+      color: rgba(234,240,255,.88);
+      background: rgba(255,255,255,.07);
+      border:1px solid var(--stroke);
+      padding: 7px 11px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items:stretch;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 880px){
+      .hero{ grid-template-columns: 1fr; }
+      .pillrow{ justify-content:flex-start; }
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.035));
+      border: 1px solid var(--stroke);
+      box-shadow: 0 18px 60px rgba(0,0,0,.42);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        linear-gradient(135deg, rgba(93,188,255,.22), rgba(189,116,255,.18), rgba(79,233,194,.10));
+      opacity:.35;
+      filter: blur(18px);
+      pointer-events:none;
+    }
+
+    .cardInner{
+      position:relative;
+      padding: 26px 24px;
+    }
+
+    .headline{
+      margin:0 0 10px;
+      font-size: 40px;
+      letter-spacing: -0.7px;
+      line-height:1.15;
+    }
+    .subhead{
+      margin:0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .subhead strong{ color: rgba(234,240,255,.94); font-weight:650; }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 18px;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.06);
+      color: rgba(234,240,255,.94);
+      font-weight: 650;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      backdrop-filter: blur(10px);
+    }
+    a.btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    a.btn.primary{
+      background: var(--btn);
+      color: var(--btnInk);
+      border-color: rgba(255,255,255,.35);
+    }
+    a.btn.primary:hover{
+      background: rgba(234,240,255,.92);
+      transform: translateY(-1px);
+    }
+
+    .icon{
+      width:18px;height:18px;display:inline-block;
+    }
+
+    .side{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid var(--stroke);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+
+    .sideInner{ padding: 22px; }
+
+    .sectionTitle{
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(234,240,255,.78);
+    }
+
+    .list{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .dot{
+      width:10px;height:10px;
+      border-radius: 99px;
+      margin-top:6px;
+      background: linear-gradient(135deg, rgba(93,188,255,.9), rgba(189,116,255,.85));
+      box-shadow: 0 0 0 4px rgba(93,188,255,.12);
+      flex: 0 0 auto;
+    }
+
+    .item h3{
+      margin:0;
+      font-size: 14.5px;
+      color: rgba(234,240,255,.92);
+      font-weight: 700;
+    }
+    .item p{
+      margin:2px 0 0;
+      color: var(--muted2);
+      font-size: 13.5px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 760px){
+      .grid{ grid-template-columns: 1fr; }
+      .headline{ font-size: 34px; }
+    }
+
+    .miniCard{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 18px 18px;
+    }
+
+    .miniCard h4{
+      margin:0 0 8px;
+      font-size: 15px;
+      letter-spacing: -.2px;
+    }
+    .miniCard p{
+      margin:0;
+      font-size: 13.5px;
+      color: var(--muted2);
+    }
+
+    .miniCard a{
+      color: rgba(234,240,255,.92);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(234,240,255,.22);
+    }
+    .miniCard a:hover{ border-bottom-color: rgba(234,240,255,.55); }
+
+    .footer{
+      margin-top: 22px;
+      color: rgba(234,240,255,.55);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .footer a{
+      color: rgba(234,240,255,.75);
+      text-decoration:none;
+    }
+    .footer a:hover{ color: rgba(234,240,255,.92); }
+
+    /* accessible focus */
+    a:focus{
+      outline: 3px solid rgba(93,188,255,.45);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1>Shayan Yawar Bhatti</h1>
+          <p>Also searched as: Shayan Bhatti • Data Analyst @ IntelliLight AI</p>
+        </div>
+      </div>
+
+      <div class="pillrow" aria-label="skills">
+        <span class="pill">SQL</span>
+        <span class="pill">Python</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Analytics</span>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <div class="cardInner">
+          <h2 class="headline">Data Analyst focused on clean metrics, automation, and decision-ready reporting.</h2>
+          <p class="subhead">
+            I build reliable analytics workflows and datasets that support product insights and measurable impact.
+            <strong>Currently open to Data Analyst / BI Analyst / Junior Data Analyst roles.</strong>
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="https://www.linkedin.com/in/shayan-yawar-bhatti/" target="_blank" rel="noopener">
+              LinkedIn
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+
+            <a class="btn" href="https://github.com/ShayanYawarBhatti" target="_blank" rel="noopener">
+              GitHub
+            </a>
+
+            <a class="btn" href="PASTE_TABLEAU_PUBLIC_LINK" target="_blank" rel="noopener">
+              Tableau Public
+            </a>
+
+            <!-- optional email button (uncomment if you want it)
+            <a class="btn" href="mailto:PASTE_YOUR_EMAIL">Email</a>
+            -->
+          </div>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="sideInner">
+          <p class="sectionTitle">Featured</p>
+          <ul class="list">
+            <li class="item">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <h3>SQL — DataLemur Archive</h3>
+                <p><a href="https://github.com/ShayanYawarBhatti/sql-datalemur-archive" target="_blank" rel="noopener">100+ interview-style SQL solutions</a></p>
+              </div>
+            </li>
+
+            <li class="item">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <h3>SQL — DataLemur Patterns</h3>
+                <p><a href="https://github.com/ShayanYawarBhatti/sql-datalemur-patterns" target="_blank" rel="noopener">structured patterns (CTEs, windows, joins)</a></p>
+              </div>
+            </li>
+
+            <li class="item">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <h3>Certifications</h3>
+                <p>Tableau Data Analyst • Excel Advanced Business • Google Data Analytics</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="miniCard">
+        <h4>What I do</h4>
+        <p>
+          KPI automation, data cleaning, validation pipelines, and analytics that tie to business outcomes.
+        </p>
+      </div>
+
+      <div class="miniCard">
+        <h4>Open to roles</h4>
+        <p>
+          Data Analyst • Business Intelligence Analyst • Data Associate • Junior Data Analyst • People Analyst
+        </p>
+      </div>
+
+      <div class="miniCard">
+        <h4>Background</h4>
+        <p>
+          B.S. Computer Science (Colgate University) • Research exposure at MIT / Oxford • Product analytics experience at IntelliLight AI
+        </p>
+      </div>
+
+      <div class="miniCard">
+        <h4>Contact</h4>
+        <p>
+          Best: <a href="https://www.linkedin.com/in/shayan-yawar-bhatti/" target="_blank" rel="noopener">LinkedIn</a>
+          (DMs open). Optional: add email button in the header.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>© <span id="y"></span> Shayan Yawar Bhatti</span>
+      <span>
+        <a href="https://www.linkedin.com/in/shayan-yawar-bhatti/" target="_blank" rel="noopener">LinkedIn</a> •
+        <a href="https://github.com/ShayanYawarBhatti" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
+
