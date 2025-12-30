@@ -46,20 +46,6 @@
       overflow-x:hidden;
     }
 
-    .avatar{
-      width:44px;
-      height:44px;
-      border-radius:14px;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-
-    .avatar{
-      box-shadow:
-      0 10px 30px rgba(0,0,0,.35),
-      0 0 0 4px rgba(93,188,255,.10);
-    }
     /* subtle texture */
     body:before{
       content:"";
@@ -95,24 +81,16 @@
       min-width:0;
     }
 
-    .mark{
+    .avatar{
       width:44px;
       height:44px;
-      border-radius: 14px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
-      border:1px solid var(--stroke);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      position:relative;
-      overflow:hidden;
-    }
-    .mark:after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background: conic-gradient(from 210deg, rgba(93,188,255,.65), rgba(189,116,255,.55), rgba(79,233,194,.35), rgba(93,188,255,.65));
-      filter: blur(22px);
-      opacity:.65;
+      border-radius:14px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.35),
+        0 0 0 4px rgba(93,188,255,.10);
+      flex: 0 0 auto;
     }
 
     .brand h1{
@@ -298,6 +276,23 @@
       font-size: 13.5px;
     }
 
+    /* Global link hygiene (prevents default blue/purple anywhere) */
+    a{ color: rgba(234,240,255,.92); }
+    a:visited{ color: rgba(234,240,255,.88); }
+
+    /* Featured link styling (high contrast + consistent) */
+    .side .item a,
+    .side .item a:visited{
+      color: rgba(234,240,255,.95) !important;
+      text-decoration: none !important;
+      border-bottom: 1px solid rgba(93,188,255,.55) !important;
+      padding-bottom: 1px;
+    }
+    .side .item a:hover{
+      color: rgba(255,255,255,1) !important;
+      border-bottom-color: rgba(93,188,255,.95) !important;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -357,32 +352,6 @@
       outline-offset: 3px;
       border-radius: 12px;
     }
-    /* Make links readable on dark/glass cards */
-    .side a,
-    .item a{
-      color: rgba(234,240,255,.92);          /* bright readable */
-      text-decoration: none;
-      border-bottom: 1px solid rgba(93,188,255,.45); /* subtle underline */
-      padding-bottom: 1px;
-    }
-    
-    .side a:visited,
-    .item a:visited{
-      color: rgba(234,240,255,.88);          /* prevent purple visited links */
-    }
-    
-    .side a:hover,
-    .item a:hover{
-      color: rgba(255,255,255,1);
-      border-bottom-color: rgba(93,188,255,.85);
-    }
-    
-    .side a:focus,
-    .item a:focus{
-      outline: 3px solid rgba(93,188,255,.45);
-      outline-offset: 3px;
-      border-radius: 8px;
-    }
   </style>
 </head>
 
@@ -424,17 +393,9 @@
               </svg>
             </a>
 
-            <a class="btn" href="https://github.com/ShayanYawarBhatti" target="_blank" rel="noopener">
-              GitHub
-            </a>
+            <a class="btn" href="https://github.com/ShayanYawarBhatti" target="_blank" rel="noopener">GitHub</a>
 
-            <a class="btn" href="https://public.tableau.com/app/profile/shayan.bhatti/" target="_blank" rel="noopener">
-              Tableau Public
-            </a>
-
-            <!-- optional email button (uncomment if you want it)
-            <a class="btn" href="mailto:PASTE_YOUR_EMAIL">Email</a>
-            -->
+            <a class="btn" href="https://public.tableau.com/app/profile/shayan.bhatti/" target="_blank" rel="noopener">Tableau Public</a>
           </div>
         </div>
       </div>
@@ -474,30 +435,24 @@
     <div class="grid">
       <div class="miniCard">
         <h4>What I do</h4>
-        <p>
-          KPI automation, data cleaning, validation pipelines, and analytics that tie to business outcomes.
-        </p>
+        <p>KPI automation, data cleaning, validation pipelines, and analytics that tie to business outcomes.</p>
       </div>
 
       <div class="miniCard">
         <h4>Open to roles</h4>
-        <p>
-          Data Analyst • Business Intelligence Analyst • Data Associate • Junior Data Analyst • People Analyst
-        </p>
+        <p>Data Analyst • Business Intelligence Analyst • Data Associate • Junior Data Analyst • People Analyst</p>
       </div>
 
       <div class="miniCard">
         <h4>Background</h4>
-        <p>
-          B.S. Computer Science (Colgate University) • Research exposure at MIT / Oxford • Product analytics experience at IntelliLight AI
-        </p>
+        <p>B.S. Computer Science (Colgate University) • Research exposure at MIT / Oxford • Product analytics experience at IntelliLight AI</p>
       </div>
 
       <div class="miniCard">
         <h4>Contact</h4>
         <p>
           Best: <a href="https://www.linkedin.com/in/shayan-yawar-bhatti/" target="_blank" rel="noopener">LinkedIn</a>
-          (DMs open). Optional: add email button in the header.
+          (DMs open).
         </p>
       </div>
     </div>
@@ -516,4 +471,3 @@
   </script>
 </body>
 </html>
-
